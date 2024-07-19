@@ -74,3 +74,27 @@ register_nav_menus([
     'top-menu' => esc_html( 'Top Header Menu', 'thedd' ),
     'footer-menu' => esc_html( 'Footer Menu', 'thedd' ),
 ]);
+
+// Register Widget Areas
+
+function thedd_widget_init() {
+    register_sidebar([
+        'name' => esc_html__(' First Sidebar ', 'thedd'),
+        'id' => 'first-sidebar',
+        'description' => esc_html__('Add first sidebar widgets here','thedd'),
+        'before_widget' => '<section class="widget">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ]);
+    register_sidebar([
+        'name' => esc_html__(' Second Sidebar ', 'thedd'),
+        'id' => 'second-sidebar',
+        'description' => esc_html__('Add second sidebar widgets here','thedd'),
+        'before_widget' => '<section class="widget">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ]);
+}
+add_action( 'widgets_init', 'thedd_widget_init' );
