@@ -9,4 +9,6 @@
 
 <body>
     <main>
-        <h1>This is the header</h1>
+        <header>
+            <?php wp_nav_menu(); ?>
+        </header>
